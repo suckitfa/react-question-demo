@@ -1,4 +1,4 @@
-module.exports = {
+export default  {
     // 箭头函数只有一个参数的时候可以忽略括号
     arrowParens: 'avoid',
     // 括号内部不要出现空格
