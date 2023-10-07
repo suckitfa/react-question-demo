@@ -1,5 +1,6 @@
 import './App.css'
 import List from './List'
+import MyButton from './MyButton'
 function App() {
   // 声明事件
   return (
@@ -7,6 +8,7 @@ function App() {
       {/* 拆分成组件 */}
       <div className="qes-container">
         <List />
+        <MyButton />
       </div>
     </>
   )
