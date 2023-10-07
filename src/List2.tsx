@@ -26,6 +26,17 @@ const List2: FC = () => {
   const handleItemDelBtnClick = (id: string) => {
     setQuestionList(questionList.filter(item => item.id !== id))
   }
+
+  const handlePublishBtnClick = (id: string) => {
+    const listCopy = questionList.slice()
+    listCopy.forEach(item => {
+      if (item.id === id) {
+        item.isPublished = !item.isPublished
+      }
+    })
+    setQuestionList(listCopy)
+  }
+
   return (
     <>
       <h1>问卷列表-使用useState重构</h1>
@@ -39,6 +50,7 @@ const List2: FC = () => {
               title={title}
               isPublished={isPublished}
               deleteQuestion={handleItemDelBtnClick}
+              publishQuestion={handlePublishBtnClick}
             />
           )
         })}
