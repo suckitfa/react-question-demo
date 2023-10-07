@@ -2,6 +2,7 @@ import './App.css'
 import List from './List'
 import MyButton from './MyButton'
 import StateDemo from './StateDemo'
+import List2 from './List2'
 function App() {
   // 声明事件
   return (
@@ -11,6 +12,7 @@ function App() {
         <List />
         <MyButton />
         <StateDemo />
+        <List2 />
       </div>
     </>
   )
