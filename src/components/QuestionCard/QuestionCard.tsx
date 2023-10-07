@@ -18,6 +18,14 @@ const QuestionCard: FC<PropsType> = props => {
     deleteQuestion && deleteQuestion(id)
   }
 
+  // useEffect(() => {
+  //   console.log('QuestionCard mounted')
+
+  //   return () => {
+  //     // 组件销毁的时候执行
+  //     console.log('QuestionCard unmounted')
+  //   }
+  // }, [])
   return (
     <>
       <li className="list-item" key={id}>

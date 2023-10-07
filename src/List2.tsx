@@ -1,4 +1,4 @@
-import { FC, useState } from 'react'
+import { FC, useEffect, useState } from 'react'
 import QuestionCard from './components/QuestionCard/QuestionCard'
 
 const List2: FC = () => {
@@ -10,6 +10,22 @@ const List2: FC = () => {
     { id: '5', title: '问卷5', isPublished: false },
   ])
 
+  // 只在组件渲染完成的时候触发
+  // useEffect(() => {
+  //   console.log('加载AJax网络请求.........')
+  // }, [])
+
+  // state变化的时候触发
+  // useEffect(() => {
+  //   console.log('questionList changed')
+  // }, [questionList])
+
+  useEffect(() => {
+    console.log('mounted......')
+    return () => {
+      console.log('destroy!...')
+    }
+  })
   const hanldeListItemAdd = () => {
     const length = questionList.length
     const r = Math.random().toString().slice(3)
