@@ -1,29 +1,29 @@
-import { FC, useState, MouseEvent } from 'react'
+import { FC, useState } from 'react'
+import QuestionCard from './components/QuestionCard/QuestionCard'
+
 const List2: FC = () => {
   const [questionList, setQuestionList] = useState([
-    { id: 1, title: '问卷1', isPublished: false },
-    { id: 2, title: '问卷2', isPublished: true },
-    { id: 3, title: '问卷3', isPublished: false },
-    { id: 4, title: '问卷4', isPublished: true },
-    { id: 5, title: '问卷5', isPublished: false },
+    { id: '1', title: '问卷1', isPublished: false },
+    { id: '2', title: '问卷2', isPublished: true },
+    { id: '3', title: '问卷3', isPublished: false },
+    { id: '4', title: '问卷4', isPublished: true },
+    { id: '5', title: '问卷5', isPublished: false },
   ])
-
-  const hanldeListItemEdit = (e: MouseEvent<HTMLButtonElement>, id: number) => {
-    console.log('e = ', e, 'id = ', id)
-  }
 
   const hanldeListItemAdd = () => {
     const length = questionList.length
+    const r = Math.random().toString().slice(3)
+    const newId = length + r
     setQuestionList(
       questionList.concat({
-        id: length + 1,
-        title: '问卷' + questionList.length + 1,
+        id: newId,
+        title: '问卷:' + newId,
         isPublished: (length + 1) % 2 ? true : false,
       })
     )
   }
 
-  const handleItemDelBtnClick = (id: number) => {
+  const handleItemDelBtnClick = (id: string) => {
     setQuestionList(questionList.filter(item => item.id !== id))
   }
   return (
@@ -33,18 +33,13 @@ const List2: FC = () => {
         {questionList.map(qes => {
           const { id, isPublished, title } = qes
           return (
-            <li className="list-item" key={id}>
-              <strong>{title}</strong>
-              <span style={{ color: isPublished ? 'green' : 'red' }}>
-                {isPublished ? '已发布' : '未发布'}
-              </span>
-              <span className="btn-container">
-                <button onClick={e => hanldeListItemEdit(e, id)}>编辑问卷</button>
-                <button className="del-btn" onClick={() => handleItemDelBtnClick(id)}>
-                  删除问卷
-                </button>
-              </span>
-            </li>
+            <QuestionCard
+              key={id}
+              id={id}
+              title={title}
+              isPublished={isPublished}
+              deleteQuestion={handleItemDelBtnClick}
+            />
           )
         })}
       </ul>

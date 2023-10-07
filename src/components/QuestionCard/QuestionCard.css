@@ -1,0 +1,18 @@
+.list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: .2em;
+  }
+  
+  .btn-container {
+    /* border: 1px solid red; */
+  }
+  .btn-container>button {
+    margin-left: 5px;
+  }
+  
+  .del-btn {
+    background-color: red;
+    color: white;
+  }
