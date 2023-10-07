@@ -1,6 +1,7 @@
 import './App.css'
 import List from './List'
 import MyButton from './MyButton'
+import StateDemo from './StateDemo'
 function App() {
   // 声明事件
   return (
@@ -9,6 +10,7 @@ function App() {
       <div className="qes-container">
         <List />
         <MyButton />
+        <StateDemo />
       </div>
     </>
   )
