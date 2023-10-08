@@ -5,6 +5,7 @@ import StateDemo from './StateDemo'
 import List2 from './List2'
 import ImmerDemo from './ImmerDemo'
 import TestUseRef from './TestUseRef'
+import UseMemoDemo from './UseMemoDemo'
 function App() {
   // 声明事件
   return (
@@ -17,6 +18,7 @@ function App() {
         <List2 />
         <ImmerDemo />
         <TestUseRef />
+        <UseMemoDemo />
       </div>
     </>
   )
