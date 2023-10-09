@@ -10,6 +10,7 @@ import './App.css'
 import useTitle from './hooks/useTitle'
 import useMouse from './hooks/useMouse'
 import useGetInfo from './hooks/useGetInfo'
+import ClosureHole from './ClosureHole'
 function App() {
   // 声明事件
 
@@ -35,6 +36,7 @@ function App() {
           X = {x}, Y = {y}
           <div>useGetInfo :{loading ? 'Loading...........' : info}</div>
         </h2>
+        <ClosureHole />
       </div>
     </>
   )

@@ -12,6 +12,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "ahooks": "^3.7.8",
     "immer": "^10.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
