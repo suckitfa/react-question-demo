@@ -7,8 +7,12 @@ import ImmerDemo from './ImmerDemo'
 import TestUseRef from './TestUseRef'
 import UseMemoDemo from './UseMemoDemo'
 import UseCallBackDemo from './UseCallBackDemo'
+import useTitle from './hooks/useTitle'
 function App() {
   // 声明事件
+
+  // 自定义钩子
+  useTitle('首页')
   return (
     <>
       {/* 拆分成组件 */}
